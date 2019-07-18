@@ -1,0 +1,62 @@
+﻿@model LaraSotoProyecto.Models.Foros
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Foros</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Estudiantes.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estudiantes.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Profesores.NombreProfesor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profesores.NombreProfesor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Asunto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Asunto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaCreacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaCreacion)
+        </dd>
+
+    </dl>
+</div>
+<h4>Comentarios</h4>
+@Html.Action("_ComentarioForo", "Comentarios", new { ForoID = Model.ForosID })
+<h4>Archivos</h4>
+@Html.Action("_ArchivoForo", "Archivos", new { ForoID = Model.ForosID })
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ForosID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

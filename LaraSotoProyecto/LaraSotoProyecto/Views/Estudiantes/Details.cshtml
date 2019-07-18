@@ -1,0 +1,60 @@
+﻿@model LaraSotoProyecto.Models.Estudiantes
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Estudiantes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Periodos.Semestre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Periodos.Semestre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Matricula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Matricula)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CalificacionFinal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CalificacionFinal)
+        </dd>
+
+    </dl>
+</div>
+<h4>Foros</h4>
+@Html.Action("_ForosEstudiante", "Foros", new { EstudianteID = Model.EstudiantesID })
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EstudiantesID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

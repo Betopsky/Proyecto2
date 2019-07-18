@@ -1,0 +1,36 @@
+﻿@model LaraSotoProyecto.Models.Periodos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Periodos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Anio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Anio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Semestre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Semestre)
+        </dd>
+
+    </dl>
+</div>
+<h4>Estudiantes</h4>
+@Html.Action("_PeriodoEstudiante", "Estudiantes", new { PeriodoID = Model.PeriodosID })
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PeriodosID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

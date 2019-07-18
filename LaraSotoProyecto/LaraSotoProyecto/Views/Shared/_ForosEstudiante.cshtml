@@ -1,0 +1,51 @@
+﻿@model IEnumerable<LaraSotoProyecto.Models.Foros>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Estudiantes.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Profesores.NombreProfesor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Asunto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaCreacion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estudiantes.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Profesores.NombreProfesor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Asunto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaCreacion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ForosID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ForosID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ForosID })
+        </td>
+    </tr>
+}
+
+</table>

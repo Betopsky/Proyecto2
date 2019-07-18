@@ -1,0 +1,36 @@
+﻿@model LaraSotoProyecto.Models.Profesores
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Profesores</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreProfesor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreProfesor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Especializacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Especializacion)
+        </dd>
+
+    </dl>
+</div>
+<h4>Foros</h4>
+@Html.Action("_ForosProfesor", "Foros", new { ProfesorID = Model.ProfesoresID })
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProfesoresID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

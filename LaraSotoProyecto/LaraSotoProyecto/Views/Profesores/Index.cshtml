@@ -1,0 +1,46 @@
+﻿@model IEnumerable<LaraSotoProyecto.Models.Profesores>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{
+    <p>
+        Ingresar Nombre o Especialización: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Nombre Profesor", "Index", new { sortOrder = ViewBag.NameSortParm })
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Especializacion)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreProfesor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Especializacion)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ProfesoresID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ProfesoresID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ProfesoresID })
+            </td>
+        </tr>
+    }
+
+</table>
